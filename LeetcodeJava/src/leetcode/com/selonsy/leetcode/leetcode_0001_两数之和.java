@@ -1,8 +1,11 @@
-package leetcode;
+package com.selonsy.leetcode;
 
 import java.util.HashMap;
 
-public class leetcode_0001_Two_Sum_两数之和 {
+/**
+ * two_sum / 1
+ */
+public class leetcode_0001_两数之和 {
 
     public int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> map = new HashMap<>();

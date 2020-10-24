@@ -24,6 +24,7 @@ public class P1TwoSum {
         Solution solution = new P1TwoSum().new Solution();
         int[] res = solution.twoSum(new int[]{2, 7, 11, 15}, 9);
         System.out.println(res[0] + " " + res[1]);
+        // Test for git.
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)

@@ -41,6 +41,6 @@ public class P1TwoSum {
             return new int[0];
         }
     }
-//leetcode submit region end(Prohibit modification and deletion)
+    //leetcode submit region end(Prohibit modification and deletion)
 
 }

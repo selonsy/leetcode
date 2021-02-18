@@ -28,9 +28,11 @@ import static leetcode.editor.cn.util.ListNodeUtl.printListNode;
 public class P2AddTwoNumbers {
     public static void main(String[] args) {
         Solution solution = new P2AddTwoNumbers().new Solution();
-        ListNode l1 = createListNodeByArray(new int[]{2, 4, 3});
+//        ListNode l1 = createListNodeByArray(new int[]{2, 4, 3});
+        ListNode l1 = createListNodeByArray(new int[]{9, 9, 9, 9, 9, 9, 9});
         printListNode(l1);
-        ListNode l2 = createListNodeByArray(new int[]{5, 6, 4});
+//        ListNode l2 = createListNodeByArray(new int[]{5, 6, 4});
+        ListNode l2 = createListNodeByArray(new int[]{9, 9, 9, 9});
         printListNode(l2);
         ListNode res = solution.addTwoNumbers(l1, l2);
         printListNode(res);
@@ -64,17 +66,27 @@ public class P2AddTwoNumbers {
                     temp = l1.val + l2.val + temp - 10 >= 0 ? 1 : 0;
                     tempNode = new ListNode(t);
                 } else if (l1 != null && l2 == null) {
-                    tempNode = new ListNode(l1.val);
+                    int t = (l1.val + temp) % 10;
+                    temp = l1.val + temp - 10 >= 0 ? 1 : 0;
+                    tempNode = new ListNode(t);
                 } else if (l1 == null && l2 != null) {
-                    tempNode = new ListNode(l2.val);
+                    int t = (l2.val + temp) % 10;
+                    temp = l2.val + temp - 10 >= 0 ? 1 : 0;
+                    tempNode = new ListNode(t);
                 }
                 if (pointer != null) {
                     pointer.next = tempNode;
                 }
                 pointer = tempNode;
                 if (head == null) head = pointer;
-                l1 = l1.next;
-                l2 = l2.next;
+                if (l1 != null) l1 = l1.next;
+                if (l2 != null) l2 = l2.next;
+            }
+            if(temp!=0){
+                tempNode = new ListNode(temp);
+                if (pointer != null) {
+                    pointer.next = tempNode;
+                }
             }
             return head;
         }

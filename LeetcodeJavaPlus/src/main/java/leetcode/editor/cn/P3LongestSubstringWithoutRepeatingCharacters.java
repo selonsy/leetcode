@@ -29,19 +29,28 @@
 
 
 package leetcode.editor.cn;
+
 //Java：无重复字符的最长子串
-public class P3LongestSubstringWithoutRepeatingCharacters{
+public class P3LongestSubstringWithoutRepeatingCharacters {
     public static void main(String[] args) {
         Solution solution = new P3LongestSubstringWithoutRepeatingCharacters().new Solution();
         // TO TEST
-        System.out.println(solution.lengthOfLongestSubstring("abcdefg"));
+        int res1 = solution.lengthOfLongestSubstring("abcabcbb");
+        int res2 = solution.lengthOfLongestSubstring("bbbbb");
+        int res3 = solution.lengthOfLongestSubstring("pwwkew");
+        System.out.println(res1 + " " + res2 + " " + res3);
+        assert res1 == 3 : "error";
+        assert res2 == 1 : "error";
+        assert res3 == 3 : "error";
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int lengthOfLongestSubstring(String s) {
-        return 0;
+    class Solution {
+        public int lengthOfLongestSubstring(String s) {
+            
+            return 0;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

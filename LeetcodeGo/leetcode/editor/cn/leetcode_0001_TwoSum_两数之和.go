@@ -44,24 +44,44 @@
 // 两数之和
 // selonsy-2021-02-18 15:38:41
 /*
-解题思路：
+解题思路：哈希表 or 暴力法
 */
 package main
 
 import "fmt"
 
 func main() {
-	// TODO:
+	target := 9
+	nums := []int{2, 7, 11, 15}
 
-	fmt.Print("done")
+	res := twoSum(nums, target)
+	fmt.Println(res)
+
+	res1 := twoSum1(nums, target)
+	fmt.Println(res1)
+
+	fmt.Println("done")
 }
 
+// 暴力法，时间复杂度O(N*N)，空间复杂度O(N)
+func twoSum1(nums []int, target int) []int {
+	for i := 0; i < len(nums); i++ {
+		for j := i + 1; j < len(nums); j++ {
+			if nums[i]+nums[j] == target {
+				return []int{i, j}
+			}
+		}
+	}
+	return nil
+}
+
+// 哈希表，时间复杂度O(N)，空间复杂度O(N)
 //leetcode submit region begin(Prohibit modification and deletion)
 func twoSum(nums []int, target int) []int {
 	hash := make(map[int]int, 0)
 	for i, v := range nums {
 		if j, ok := hash[target-v]; ok {
-			return []int{i, j}
+			return []int{j, i}
 		}
 		hash[v] = i
 	}

@@ -55,11 +55,6 @@ func main() {
 	fmt.Print("done")
 }
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
 //leetcode submit region begin(Prohibit modification and deletion)
 /**
  * Definition for singly-linked list.
